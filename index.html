@@ -11,20 +11,19 @@
     html {
       scroll-behavior: smooth; 
     }
-    body {
+ body {
       background-color: #0b0b0b; 
       color: #e0e0e0;
       font-family: 'Pretendard', sans-serif;
       margin: 0;
       padding: 0;
       
-      /* 🌟 1. 전체 배경 이미지를 여기에 깔고 고정한다냥! */
-      background-image: url('map.jpg'); /* 본인의 배경 사진 주소로 바꾸기냥 */
+      /* 🌟 여기가 핵심이다냥! url() 앞에 linear-gradient 필터를 추가했다냥 */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('map.jpg'); 
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       
-      /* 🌟 2. 처음에 스크롤을 못 하게 꽁꽁 묶어둔다냥! */
       overflow: hidden; 
     }
 
