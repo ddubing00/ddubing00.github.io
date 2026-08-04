@@ -379,6 +379,16 @@
         font-size: 0.85rem;
       }
     }
+    /* 🌟 스크롤 할 때 아래에서 위로 스르륵 떠오르는 효과 세팅 */
+    .fade-up-element {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.0s cubic-bezier(0.16, 1, 0.3, 1), transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-up-element.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -616,6 +626,31 @@
     setTimeout(() => { dust.remove(); }, duration * 1000);
   }
   setInterval(createDust, 150);
+  // 🌟 스크롤 시 요소가 페이드인 되도록 감지하는 옵저버다냥
+    document.addEventListener("DOMContentLoaded", function() {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // 상자가 화면에 15% 정도 보일 때 발동한다냥!
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // 한 번 나타난 요소는 관찰을 멈춘다냥
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // 효과를 주고 싶은 모든 상자들에 클래스를 달아준다냥
+      const targets = document.querySelectorAll('#section-rules .glass-box, .target-card, .main-intro-box, .map-container');
+      targets.forEach(target => {
+        target.classList.add('fade-up-element');
+        observer.observe(target);
+      });
+    });
 </script>
 </body>
 </html>
