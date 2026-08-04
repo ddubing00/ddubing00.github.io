@@ -5,26 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>낙인의 정원 - 카리스 아레나</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
-    /* 🌟 메인 세계관 소개 박스 스타일링 */
+
+    /* 🌟 [메인] 세계관 소개 섹션 고정 디자인 (중복 제거 완료!) */
+    #section-main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 20px 20px;
+      box-sizing: border-box;
+    }
     .main-intro-box {
-      background: rgba(15, 5, 5, 0.65); /* 딥한 다크 피빛 반투명 유리 */
+      background: rgba(15, 5, 5, 0.7); /* 딥한 다크 피빛 반투명 유리 */
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
-      border: 1px solid rgba(217, 83, 79, 0.3);
+      border: 1px solid rgba(217, 83, 79, 0.4);
       border-radius: 12px;
       padding: 50px 60px;
       max-width: 850px;
       width: 90%;
       text-align: center;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(179, 0, 0, 0.15);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(179, 0, 0, 0.2);
     }
     .main-intro-title {
       font-family: 'RIDIBatang', 'Nanum Myeongjo', serif;
       color: #ff4d4d;
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       margin-top: 0;
       margin-bottom: 20px;
       letter-spacing: 3px;
@@ -40,7 +50,7 @@
       font-family: 'Pretendard', sans-serif;
       color: #e0e0e0;
       font-size: 1.05rem;
-      line-height: 2.2; /* 줄 간격을 넓게 주어 가독성을 극대화했다냥 */
+      line-height: 2.2;
       letter-spacing: 1px;
       margin: 0;
     }
