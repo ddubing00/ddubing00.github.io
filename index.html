@@ -3,133 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>낙인의 정원 - 카리스 아레나 공식 사이트</title>
+  <title>낙인의 정원 - 카리스 아레나</title>
   <style>
+    /* 웹 폰트 불러오기냥 */
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
+
+    /* 1. 스무스 스크롤 및 기본 설정 (최신 웹 기술 적용!) */
+    html {
+      scroll-behavior: smooth; 
+    }
     body {
-      background-color: #0b0b0b; /* 더 어두운 배경으로 몰입감 극대화냥 */
+      background-color: #0b0b0b; 
       color: #e0e0e0;
-      font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+      font-family: 'Pretendard', sans-serif;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      overflow-x: hidden; /* 알림창 튀어나오는 것 숨기기냥 */
+      overflow-x: hidden;
     }
 
-    /* 1. 보안 인가 접속 화면 (사진 1번 느낌) */
+    /* 2. 줌인 & 페이드아웃 터미널 인트로 화면 */
     #login-screen {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-color: rgba(11, 11, 11, 0.95);
+      top: 0; left: 0; width: 100%; height: 100vh;
+      background-color: #050505;
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 999; /* 제일 위에 오도록 설정했다냥 */
-      transition: opacity 0.8s ease;
+      z-index: 9999;
+      transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); /* 슈유육~ 빨려 들어가는 애니메이션냥! */
     }
     .login-box {
       border: 1px solid #d9534f;
       padding: 50px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(217, 83, 79, 0.3), inset 0 0 10px rgba(217, 83, 79, 0.2);
+      box-shadow: 0 0 20px rgba(217, 83, 79, 0.3);
       background-color: #121212;
     }
     .login-title {
+      font-family: 'RIDIBatang', serif;
       color: #d9534f;
       font-size: 2.5rem;
       margin: 0 0 10px 0;
       letter-spacing: 5px;
-      text-shadow: 0 0 10px #d9534f;
-    }
-    .login-subtitle {
-      color: #888;
-      font-size: 0.9rem;
-      margin-bottom: 40px;
-      letter-spacing: 2px;
-    }
-    .login-input {
-      background-color: transparent;
-      border: 1px solid #d9534f;
-      color: #fff;
-      padding: 15px;
-      width: 250px;
-      font-size: 1rem;
-      text-align: center;
-      border-radius: 4px;
-      outline: none;
-      margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .login-input:focus {
-      box-shadow: 0 0 15px rgba(217, 83, 79, 0.6);
     }
     .login-btn {
       background-color: transparent;
       color: #d9534f;
       border: 1px solid #d9534f;
-      padding: 15px 40px;
-      font-size: 1.2rem;
+      padding: 12px 30px;
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      border-radius: 4px;
-      letter-spacing: 2px;
+      margin-top: 20px;
       transition: 0.3s;
     }
     .login-btn:hover {
       background-color: #d9534f;
       color: #000;
-      box-shadow: 0 0 20px #d9534f;
+    }
+    .fade-out-zoom {
+      opacity: 0;
+      transform: scale(1.5);
+      pointer-events: none;
     }
 
-    /* 2. 오른쪽 위 알림창 (사진 2번 느낌) */
-    #notification {
+    /* 3. 상단 고정 네비게이션 (스크롤 따라다님냥!) */
+    header {
       position: fixed;
-      top: 30px;
-      right: -400px; /* 처음엔 화면 밖에 숨겨둔다냥 */
-      width: 320px;
-      background-color: #1a1a1a;
-      border: 1px solid #333;
-      border-left: 4px solid #f0ad4e;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-      z-index: 100;
-      transition: right 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      top: 0;
+      width: 100%;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(11, 11, 11, 0.8);
+      backdrop-filter: blur(10px); /* 헤더에도 반투명 유리 효과냥! */
+      border-bottom: 1px solid rgba(217, 83, 79, 0.3);
+      z-index: 1000;
+      box-sizing: border-box;
     }
-    .notif-sender {
-      color: #f0ad4e;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      display: block;
+    .nav-links {
+      display: flex;
+      gap: 30px;
     }
-    .notif-text {
-      color: #ccc;
-      line-height: 1.5;
-      font-size: 0.95rem;
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+      font-family: 'RIDIBatang', serif;
+    }
+    .nav-links a:hover {
+      color: #d9534f;
     }
 
-    /* 3. 지도 배경과 내부에 들어간 제목 (사진 4번 느낌) */
- .map-container {
+    /* 공통 섹션 여백 */
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 20px 20px 20px;
+    }
+
+    /* 4. 와이드 지도 섹션 */
+    .map-container {
       position: relative;
-      width: 95%; /* 화면에 꽉 차게 넓혔다냥 */
+      width: 95%;
       max-width: 1400px;
-      aspect-ratio: 16 / 9; /* 가로가 긴 직사각형 비율로 맞췄다냥! */
-      
-      background-image: url(https://github.com/ddubing00/ddubing00.github.io/blob/main/map.jpg.jpg?raw=true); 
+      aspect-ratio: 16 / 9; 
+      background-image: url('map.jpg'); /* 네가 저장한 영어 이름 사진 주소냥! */
       background-size: cover;
       background-position: center;
-      box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
-      margin-top: 2vh;
       border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
     }
-    
-    /* 분리되어 있던 제목을 지도 안으로 옮겼다냥 */
     .map-title {
       position: absolute;
       top: 30px;
@@ -138,100 +129,98 @@
       color: #d9534f;
       font-size: 2.5rem;
       letter-spacing: 4px;
-      margin: 0;
-      text-shadow: 2px 2px 5px #000, 0 0 15px rgba(0, 0, 0, 0.8);
-      font-family: 'Batang', 'Nanum Myeongjo', serif;
-      pointer-events: none; /* 글씨 때문에 지도를 클릭 못하는 일 방지냥 */
+      text-shadow: 2px 2px 5px #000;
+      font-family: 'RIDIBatang', serif;
     }
 
-    /* 지도 위 명소 버튼들 */
-    .area-link {
-      position: absolute;
+    /* 5. 글래스모피즘(반투명 유리) 콘텐츠 박스 */
+    .glass-container {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: transparent; 
-      border: none;
-      font-family: 'Batang', 'Nanum Myeongjo', serif;
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #e0e0e0;
-      text-decoration: none;
-      text-shadow: 0 0 5px #000, 0 0 15px #88aaff, 0 0 20px #88aaff; 
-      transition: all 0.3s ease;
-      cursor: pointer;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 40px;
     }
-    .area-link:hover {
-      color: #ffffff;
-      text-shadow: 0 0 10px #000, 0 0 20px #f0ad4e, 0 0 30px #d9534f;
-      transform: scale(1.15);
+    .glass-box {
+      flex: 1;
+      /* 피 튀기는 전장 위에 어울리는 서늘한 붉은빛 반투명 유리 효과냥! */
+      background: rgba(30, 15, 15, 0.4); 
+      backdrop-filter: blur(12px); 
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(217, 83, 79, 0.2);
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     }
-    
-    /* 지도 위치 좌표냥 */
-    #link-mirror-lake { top: 48%; left: 45%; }
-    #link-forest { top: 62%; left: 75%; }
-    #link-field { top: 22%; left: 37%; }
-    #link-ruins { top: 42%; left: 16%; }
-    #link-mist { top: 12%; left: 88%; }
+    .glass-box h3 {
+      font-family: 'RIDIBatang', serif;
+      color: #d9534f;
+      border-bottom: 1px solid #d9534f;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- 보안 인가 접속 화면 -->
+  <!-- [기술 1] 줌인 인트로 화면 -->
   <div id="login-screen">
     <div class="login-box">
       <h2 class="login-title">KARIS ARENA</h2>
-      <p class="login-subtitle">[ 터미널 보안 인증 시스템 ]</p>
-      <input type="text" id="username" class="login-input" placeholder="대표자 성명을 입력하세요">
-      <button class="login-btn" onclick="grantAccess()">ACCESS</button>
+      <p style="color: #888; letter-spacing: 2px;">[ 터미널 보안 인증 시스템 ]</p>
+      <button class="login-btn" onclick="enterArena()">접속 허가</button>
     </div>
   </div>
 
-  <!-- 오른쪽 위 슬라이드 알림창 -->
-  <div id="notification">
-    <span class="notif-sender">SYSTEM</span>
-    <span class="notif-text">"<span id="display-name">대표자</span>님, 환영합니다.<br>최후의 1인이 되길 바랍니다."</span>
-  </div>
+  <!-- [기술 2] 스크롤 고정 네비게이션 -->
+  <header>
+    <div class="nav-links">
+      <a href="#section-map">전장 지도</a>
+      <a href="#section-rules">아레나 규정</a>
+      <a href="#section-targets">타겟 & 동맹</a>
+    </div>
+  </header>
 
-  <!-- 메인 지도 컨테이너 -->
-  <div class="map-container">
-    <!-- 배경 이미지 위에 떠 있는 통합 제목 -->
-    <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
-    
-    <a href="#" class="area-link" id="link-mirror-lake">1. 거울 호수</a>
-    <a href="#" class="area-link" id="link-forest">2. 울창한 숲</a>
-    <a href="#" class="area-link" id="link-field">3. 열린 공터</a>
-    <a href="#" class="area-link" id="link-ruins">4. 작은 폐허</a>
-    <a href="#" class="area-link" id="link-mist">5. 경계의 안개</a>
-  </div>
+  <!-- 지도 섹션 -->
+  <section id="section-map">
+    <div class="map-container">
+      <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
+    </div>
+  </section>
 
-  <!-- 화면을 제어하는 마법 주문(JavaScript)이다냥! -->
+  <!-- [기술 3] 글래스모피즘 반투명 정보 창 -->
+  <section id="section-rules">
+    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
+    <div class="glass-container">
+      <div class="glass-box">
+        <h3>제1항 : 승리 조건</h3>
+        <p>1주일간의 생존 경쟁 후, 몸에 찍힌 '인장'의 개수가 가장 적은 자가 1위를 차지하여 수도로 승격한다.</p>
+      </div>
+      <div class="glass-box">
+        <h3>제2항 : 무력화 인장 각인</h3>
+        <p>상대가 저항할 수 없는 무력화 상태(기절, 수면, 절정 등)에서 10초를 유지해야 인장을 새길 수 있다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 다음 섹션 준비 공간 -->
+  <section id="section-targets">
+    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">참가자 명부</h2>
+    <div class="glass-container">
+      <div class="glass-box" style="text-align: center;">
+        <p style="color: #888;">데이터 접근 중...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 인트로 애니메이션 자바스크립트 -->
   <script>
-    function grantAccess() {
-      // 1. 입력한 이름 가져오기
-      var userName = document.getElementById('username').value;
-      if(userName === "") { userName = "참가자"; } // 아무것도 안 적으면 참가자로 부른다냥
-      
-      // 2. 알림창에 이름 집어넣기
-      document.getElementById('display-name').innerText = userName;
-      
-      // 3. 로그인 화면 서서히 사라지게 하기
-      var loginScreen = document.getElementById('login-screen');
-      loginScreen.style.opacity = '0';
-      
-      // 4. 로그인 화면이 사라진 후 완전히 치워버리고 알림창 띄우기
-      setTimeout(function() {
-        loginScreen.style.display = 'none'; // 완전히 숨김
-        
-        // 5. 알림창 오른쪽에서 스르륵 나타나기 (0px 위치로 이동)
-        document.getElementById('notification').style.right = '20px';
-        
-        // 6. 5초 뒤에 알림창 다시 사라지게 하기 (선택 사항냥!)
-        setTimeout(function() {
-          document.getElementById('notification').style.right = '-400px';
-        }, 5000);
-        
-      }, 800); // 0.8초 동안 흐려지는 걸 기다린다냥
+    function enterArena() {
+      const loginScreen = document.getElementById('login-screen');
+      loginScreen.classList.add('fade-out-zoom');
+      setTimeout(() => {
+        loginScreen.style.display = 'none';
+      }, 1200);
     }
   </script>
 </body>
