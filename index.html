@@ -48,20 +48,25 @@
     }
     
     /* 4. 메인 타이틀 (흰색 글씨에 붉은 안개가 퍼지듯 고급스럽게 바꿨다냥!) */
-   /* 메인 타이틀 (아주아주 크게 키우고 화려한 게임 로고처럼 변경냥!) */
+ 
     .intro-title {
-      font-family: 'RIDIBatang', serif;
-      font-size: 9vw; /* 화면 가로 길이에 맞춰서 엄청 거대해진다냥! */
+      /* 1. 혹시 리디바탕이 안 불러와지더라도 날카로운 명조체가 뜨도록 강제 방어막 설정냥! */
+      font-family: 'RIDIBatang', 'Nanum Myeongjo', 'Batang', serif;
+      font-size: 7.5vw; /* 무식하게 크지 않도록 사이즈를 살짝 다듬었다냥 */
+      font-weight: 900;
       margin: 0;
-      letter-spacing: 10px;
+      letter-spacing: 12px;
       
-      /* 화려한 금빛 그라데이션 텍스처 효과 */
-      background: linear-gradient(to bottom, #fff9e6, #e6c25a, #b3801a);
+      /* 2. 촌스러운 노란색을 버리고, 서늘하고 날카로운 백금(Platinum) 질감 적용 */
+      background: linear-gradient(to bottom, #ffffff 30%, #e0c89b 60%, #8a6a32 100%);
       -webkit-background-clip: text;
       color: transparent;
       
-      /* 글씨 주변에 붉은 안개와 깊은 그림자 추가 */
-      filter: drop-shadow(0px 0px 25px rgba(217, 83, 79, 0.9)) drop-shadow(0px 8px 5px rgba(0,0,0,0.9));
+      /* 3. 폰트 테두리에 얇은 선을 그어서 금속 로고처럼 엣지를 살렸다냥 */
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+      
+      /* 4. 케첩 느낌을 없애고, 깊은 흑암 속에 붉은 안개가 깔린 듯한 그림자 세팅 */
+      filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.9)) drop-shadow(0px 0px 30px rgba(150, 10, 10, 0.8));
       z-index: 10;
     }
 
