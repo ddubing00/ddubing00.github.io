@@ -40,12 +40,13 @@
     }
     
     /* 3. 부제목 (현대적이고 깔끔한 폰트로 변경하고 여백을 줬다냥) */
-    .intro-subtitle {
-      font-family: 'Pretendard', sans-serif;
-      color: #ccc;
-      letter-spacing: 5px;
-      margin-bottom: 25px;
-      font-size: 1.1rem;
+ .intro-subtitle {
+      font-family: 'RIDIBatang', 'Nanum Myeongjo', serif;
+      color: #ff6b6b; /* 핏빛 붉은색 */
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
     }
     
     /* 4. 메인 타이틀 (흰색 글씨에 붉은 안개가 퍼지듯 고급스럽게 바꿨다냥!) */
@@ -97,30 +98,30 @@
     }
     
     /* 5. 접속 버튼 (세련된 테두리 버튼으로 디자인했다냥) */
-    .login-btn {
+  .login-btn {
       position: absolute; 
       bottom: 12%;
-      background-color: transparent;
-      color: #eee;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      background-color: rgba(20, 0, 0, 0.6);
+      color: #ff9999;
+      border: 1px solid #b30000; /* 피빛 테두리 */
       padding: 15px 50px;
       font-size: 1.1rem;
       letter-spacing: 3px;
       cursor: pointer;
-      transition: 0.4s;
+      box-shadow: 0 0 15px rgba(179, 0, 0, 0.4);
+      transition: all 0.5s ease; /* 부드럽고 무섭게 반응하게 변경냥 */
     }
     .login-btn:hover {
-      background-color: rgba(217, 83, 79, 0.2);
-      border-color: #d9534f;
-      color: #d9534f;
-      box-shadow: 0 0 20px rgba(217, 83, 79, 0.5);
+      background-color: rgba(179, 0, 0, 0.4);
+      border-color: #ff3333;
+      color: #ffffff;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.5);
     }
-    .fade-out-zoom {
+.fade-out-zoom {
       opacity: 0;
-      transform: scale(1.5);
+      transform: scale(1.8); /* 더 멀리 줌인되면서 빨려 들어간다냥 */
       pointer-events: none;
     }
-
     /* 🌟 3. 메인 콘텐츠들을 하나로 묶어서 처음엔 투명 망토를 씌워둔다냥! */
     #main-wrapper {
       opacity: 0;
@@ -279,7 +280,6 @@
 
 <script>
     function enterArena() {
-      // (기존에 있던 엔터 아레나 코드들은 그대로 둔다냥)
       const loginScreen = document.getElementById('login-screen');
       const mainWrapper = document.getElementById('main-wrapper');
       
@@ -288,37 +288,27 @@
       mainWrapper.style.opacity = '1';
       document.body.style.overflow = 'auto'; 
       
+      // 🌟 2.5초 동안 슈우우웅~ 연출이 다 끝난 뒤에 인트로 창을 치운다냥!
       setTimeout(() => {
         loginScreen.style.display = 'none';
-      }, 1200);
+      }, 2500);
     }
 
-    /* 🌟 여기서부터 새로 추가하는 먼지 이펙트 코드다냥! 🌟 */
+    // (기존 먼지 생성 코드 createDust 및 setInterval은 그대로 두기냥!)
     function createDust() {
       const particlesContainer = document.getElementById('particles');
       if (!particlesContainer) return;
-      
       const dust = document.createElement('div');
       dust.classList.add('dust');
-      
-      // 먼지 크기, 위치, 올라가는 속도를 다 다르게 랜덤으로 설정한다냥
       const size = Math.random() * 4 + 1; 
       dust.style.width = size + 'px';
       dust.style.height = size + 'px';
       dust.style.left = Math.random() * 100 + 'vw';
-      
-      const duration = Math.random() * 5 + 3; // 3초 ~ 8초
+      const duration = Math.random() * 5 + 3; 
       dust.style.animationDuration = duration + 's';
-      
       particlesContainer.appendChild(dust);
-      
-      // 화면 밖으로 나간 먼지는 청소해준다냥
-      setTimeout(() => {
-        dust.remove();
-      }, duration * 1000);
+      setTimeout(() => { dust.remove(); }, duration * 1000);
     }
-    
-    // 0.15초마다 끊임없이 먼지를 뿜어낸다냥!
     setInterval(createDust, 150);
   </script>
 </body>
