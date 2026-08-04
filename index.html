@@ -277,6 +277,71 @@
     .rules-card strong {
       color: #ff9999;
     }
+    /* 🌟 참가자 명부 카드 그리드 디자인 */
+    .target-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .target-card {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      text-align: left !important;
+      padding: 25px !important;
+    }
+    .target-img-box {
+      width: 110px;
+      height: 130px;
+      flex-shrink: 0;
+      background-color: #1a0a0a;
+      border: 1px solid rgba(217, 83, 79, 0.4);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .target-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .target-info {
+      flex-grow: 1;
+    }
+    .target-rank {
+      display: inline-block;
+      background-color: #b30000;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+    .target-info h3 {
+      margin: 0 0 10px 0 !important;
+      font-size: 1.25rem;
+      color: #fff !important;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+    }
+    .target-zone {
+      font-size: 0.9rem;
+      color: #ff9999;
+      font-weight: normal;
+    }
+    .target-info p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #d0d0d0;
+    }
+    .target-info strong {
+      color: #ff6b6b;
+    }
   </style>
 </head>
 <body>
@@ -374,14 +439,100 @@
     </section>
 
   <!-- 타겟 & 동맹 섹션 -->
-  <section id="section-targets">
-    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">참가자 명부</h2>
-    <div class="glass-container">
-      <div class="glass-box" style="text-align: center;">
-        <p style="color: #888;">데이터 접근 중...</p>
+<!-- 2. 타겟 & 동맹 섹션 (8명 캐릭터 프로필 카드) -->
+    <section id="section-targets">
+      <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.3rem; color: #ff4d4d; margin-bottom: 40px; text-shadow: 0 0 15px rgba(255,0,0,0.5);">참가자 명부</h2>
+      
+      <div class="target-grid">
+        <!-- 1위: 아이린 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="irene.jpg" alt="아이린"></div>
+          <div class="target-info">
+            <span class="target-rank">1위</span>
+            <h3>아이린 <span class="target-zone">/ 천락계</span></h3>
+            <p><strong>성향:</strong> 차갑고 우아한 절대자</p>
+            <p><strong>특이 행동:</strong> 상대방 밟기, 상대방에게 목줄채우기, 상대방의 몸 위에 올라타기</p>
+          </div>
+        </div>
+
+        <!-- 2위: 스칼라 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="scala.jpg" alt="스칼라"></div>
+          <div class="target-info">
+            <span class="target-rank">2위</span>
+            <h3>스칼라 <span class="target-zone">/ 홍염계</span></h3>
+            <p><strong>성향:</strong> 직설적·호전적</p>
+            <p><strong>특이 행동:</strong> 유X에 집게달기, 결박당하기, 진동기로 괴롭힘 당하기, 목줄 채워지기, 몸에 얼음 뿌리기, 몸에 촛농 떨어뜨려지기, 몸을 로프로 구속하기</p>
+          </div>
+        </div>
+
+        <!-- 3위: 셀레네 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="selene.jpg" alt="셀레네"></div>
+          <div class="target-info">
+            <span class="target-rank">3위</span>
+            <h3>셀레네 <span class="target-zone">/ 청월계</span></h3>
+            <p><strong>성향:</strong> 겉은 예의, 속은 집착</p>
+            <p><strong>특이 행동:</strong> 무서운 미소,수갑,밧줄로 묶으려고 함, 수상한 음료 건넴, 안광이 없이 자주 중얼거림,칼 들고 웃으며 협박</p>
+          </div>
+        </div>
+
+        <!-- 4위: 카이엔 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="kaien.jpg" alt="카이엔"></div>
+          <div class="target-info">
+            <span class="target-rank">4위</span>
+            <h3>카이엔 <span class="target-zone">/ 황금계</span></h3>
+            <p><strong>성향:</strong> 계산적·이득 우선</p>
+            <p><strong>특이 행동:</strong> 이득에 대해 고민하기, 뛰어난 화술로 설득함, 여러 정보들을 수첩에 메모,다른 참가자들의 정보 자료들을 미끼로 유혹, 코인을 대가로 유혹</p>
+          </div>
+        </div>
+
+        <!-- 5위: 프레야 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="freya.jpg" alt="프레야"></div>
+          <div class="target-info">
+            <span class="target-rank">5위</span>
+            <h3>프레야 <span class="target-zone">/ 녹림계</span></h3>
+            <p><strong>성향:</strong> 본능적·솔직</p>
+            <p><strong>특이 행동:</strong> 공개된 장소에서 X위 보여주기, 목X 채워지고 X슴 만져지기, XX 후 한번 더 하자고 애원, 자X 냄새 맡으며 XX하기, 정X 먹기</p>
+          </div>
+        </div>
+
+        <!-- 6위: 그레이스 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="grace.jpg" alt="그레이스"></div>
+          <div class="target-info">
+            <span class="target-rank">6위</span>
+            <h3>그레이스 <span class="target-zone">/ 자영계</span></h3>
+            <p><strong>성향:</strong> 조용하고 교활</p>
+            <p><strong>특이 행동:</strong> 조용히 귓속말 하며 심리 장악, 솔직해지는 물약 먹이기, 스킨쉽을 미끼로 속마음 캐내기, 추를 흔들며 최면 걸기, 손가락을 튕기며 최면 걸기</p>
+          </div>
+        </div>
+
+        <!-- 7위: 레나 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="rena.jpg" alt="레나"></div>
+          <div class="target-info">
+            <span class="target-rank">7위</span>
+            <h3>레나 <span class="target-zone">/ 백은계</span></h3>
+            <p><strong>성향:</strong> 정의감·억압된 욕망</p>
+            <p><strong>특이 행동:</strong> 메이드 코스프레, 고양이 코스프레, 간호사 코스프레, 바니걸 코스프레, 산타걸 코스프레</p>
+          </div>
+        </div>
+
+        <!-- 8위: 테르 -->
+        <div class="glass-box target-card">
+          <div class="target-img-box"><img src="terre.jpg" alt="테르"></div>
+          <div class="target-info">
+            <span class="target-rank">8위</span>
+            <h3>테르 <span class="target-zone">/ 흑토계</span></h3>
+            <p><strong>성향:</strong> 거칠고 직설적</p>
+            <p><strong>특이 행동:</strong> 칼로 위협하며 휘두룸,항상 싸울 준비 자세, 싸울 생각에 입맛 다시기, 윗통 벗고 다니기, 도발하기</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
   <!-- 전장 지도 섹션 -->
   <section id="section-map">
