@@ -8,7 +8,42 @@
     @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
-
+/* 🌟 메인 세계관 소개 박스 스타일링 */
+    .main-intro-box {
+      background: rgba(15, 5, 5, 0.65); /* 딥한 다크 피빛 반투명 유리 */
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(217, 83, 79, 0.3);
+      border-radius: 12px;
+      padding: 50px 60px;
+      max-width: 850px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(179, 0, 0, 0.15);
+    }
+    .main-intro-title {
+      font-family: 'RIDIBatang', 'Nanum Myeongjo', serif;
+      color: #ff4d4d;
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    .main-intro-divider {
+      width: 60px;
+      height: 2px;
+      background-color: #b30000;
+      margin: 0 auto 25px auto;
+    }
+    .main-intro-text {
+      font-family: 'Pretendard', sans-serif;
+      color: #e0e0e0;
+      font-size: 1.05rem;
+      line-height: 2.2; /* 줄 간격을 넓게 주어 가독성을 극대화했다냥 */
+      letter-spacing: 1px;
+      margin: 0;
+    }
     html {
       scroll-behavior: smooth; 
     }
@@ -238,13 +273,48 @@
     
 <header>
       <div class="nav-links">
-        <!-- 규정 -> 타겟 -> 지도 순서로 재배치했다냥! -->
+        <a href="#section-main">메인</a>
         <a href="#section-rules">아레나 규정</a>
         <a href="#section-targets">타겟 & 동맹</a>
         <a href="#section-map">전장 지도</a>
       </div>
     </header>
-
+/* 🌟 메인 세계관 소개 박스 스타일링 */
+    .main-intro-box {
+      background: rgba(15, 5, 5, 0.65); /* 딥한 다크 피빛 반투명 유리 */
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(217, 83, 79, 0.3);
+      border-radius: 12px;
+      padding: 50px 60px;
+      max-width: 850px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(179, 0, 0, 0.15);
+    }
+    .main-intro-title {
+      font-family: 'RIDIBatang', 'Nanum Myeongjo', serif;
+      color: #ff4d4d;
+      font-size: 2.2rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    .main-intro-divider {
+      width: 60px;
+      height: 2px;
+      background-color: #b30000;
+      margin: 0 auto 25px auto;
+    }
+    .main-intro-text {
+      font-family: 'Pretendard', sans-serif;
+      color: #e0e0e0;
+      font-size: 1.05rem;
+      line-height: 2.2; /* 줄 간격을 넓게 주어 가독성을 극대화했다냥 */
+      letter-spacing: 1px;
+      margin: 0;
+    }
    <!-- 1. 아레나 규정 섹션 (가장 먼저 나오게 위로 올렸다냥!) -->
     <section id="section-rules">
       <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
