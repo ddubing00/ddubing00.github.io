@@ -5,37 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>낙인의 정원 - 카리스 아레나</title>
   <style>
-    /* 웹 폰트 불러오기냥 */
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
 
-    /* 1. 스무스 스크롤 및 기본 설정 (최신 웹 기술 적용!) */
     html {
       scroll-behavior: smooth; 
     }
-  body {
+    body {
       background-color: #0b0b0b; 
       color: #e0e0e0;
       font-family: 'Pretendard', sans-serif;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-
-      /* 💡 여기에 배경 고정 마법을 추가했다냥! */
-      background-image: url('map.jpg'); /* 사용할 전체 배경 사진 */
-      background-size: cover; /* 화면에 빈틈없이 꽉 차게 */
-      background-position: center; /* 사진이 중앙에 오게 정렬 */
-      background-attachment: fixed; /* 🌟 스크롤을 내려도 배경 이미지를 제자리에 꽉 잡아준다냥! */
+      
+      /* 🌟 1. 전체 배경 이미지를 여기에 깔고 고정한다냥! */
+      background-image: url('map.jpg'); /* 본인의 배경 사진 주소로 바꾸기냥 */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      
+      /* 🌟 2. 처음에 스크롤을 못 하게 꽁꽁 묶어둔다냥! */
+      overflow: hidden; 
     }
 
-    /* 2. 줌인 & 페이드아웃 터미널 인트로 화면 */
- #login-screen {
+    /* 인트로 접속 창 */
+    #login-screen {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100vh;
       
-      /* 💡 여기가 범인이었다냥! 불투명한 까만색을 반투명하게 바꿨다냥 */
+      /* 배경은 투명하게 해서 뒤의 우주(또는 숲) 배경이 비치게 한다냥 */
       background-color: rgba(5, 5, 5, 0.7); 
-      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -48,7 +47,8 @@
       border-radius: 8px;
       text-align: center;
       box-shadow: 0 0 20px rgba(217, 83, 79, 0.3);
-      background-color: #121212;
+      background-color: rgba(18, 18, 18, 0.9); /* 박스는 살짝 어둡게냥 */
+      backdrop-filter: blur(5px);
     }
     .login-title {
       font-family: 'RIDIBatang', serif;
@@ -78,7 +78,14 @@
       pointer-events: none;
     }
 
-    /* 3. 상단 고정 네비게이션 (스크롤 따라다님냥!) */
+    /* 🌟 3. 메인 콘텐츠들을 하나로 묶어서 처음엔 투명 망토를 씌워둔다냥! */
+    #main-wrapper {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.5s ease; /* 나중에 1.5초 동안 스르륵 나타날 거다냥 */
+    }
+
+    /* 상단 고정 네비게이션 */
     header {
       position: fixed;
       top: 0;
@@ -88,7 +95,7 @@
       justify-content: center;
       align-items: center;
       background: rgba(11, 11, 11, 0.8);
-      backdrop-filter: blur(10px); /* 헤더에도 반투명 유리 효과냥! */
+      backdrop-filter: blur(10px); 
       border-bottom: 1px solid rgba(217, 83, 79, 0.3);
       z-index: 1000;
       box-sizing: border-box;
@@ -108,7 +115,7 @@
       color: #d9534f;
     }
 
-    /* 공통 섹션 여백 */
+    /* 공통 섹션 */
     section {
       min-height: 100vh;
       display: flex;
@@ -118,13 +125,13 @@
       padding: 80px 20px 20px 20px;
     }
 
-    /* 4. 와이드 지도 섹션 */
+    /* 와이드 지도 섹션 */
     .map-container {
       position: relative;
       width: 95%;
       max-width: 1400px;
       aspect-ratio: 16 / 9; 
-      background-image: url('map.jpg'); /* 네가 저장한 영어 이름 사진 주소냥! */
+      background-image: url('map.jpg'); /* 지도 사진 주소 유지냥! */
       background-size: cover;
       background-position: center;
       border-radius: 10px;
@@ -142,7 +149,7 @@
       font-family: 'RIDIBatang', serif;
     }
 
-    /* 5. 글래스모피즘(반투명 유리) 콘텐츠 박스 */
+    /* 글래스모피즘(반투명 유리) 콘텐츠 박스 */
     .glass-container {
       display: flex;
       gap: 30px;
@@ -152,7 +159,6 @@
     }
     .glass-box {
       flex: 1;
-      /* 피 튀기는 전장 위에 어울리는 서늘한 붉은빛 반투명 유리 효과냥! */
       background: rgba(30, 15, 15, 0.4); 
       backdrop-filter: blur(12px); 
       -webkit-backdrop-filter: blur(12px);
@@ -172,7 +178,7 @@
 </head>
 <body>
 
-  <!-- [기술 1] 줌인 인트로 화면 -->
+  <!-- 1. 가장 먼저 보이는 인트로 화면 -->
   <div id="login-screen">
     <div class="login-box">
       <h2 class="login-title">KARIS ARENA</h2>
@@ -181,52 +187,62 @@
     </div>
   </div>
 
-  <!-- [기술 2] 스크롤 고정 네비게이션 -->
-  <header>
-    <div class="nav-links">
-      <a href="#section-map">전장 지도</a>
-      <a href="#section-rules">아레나 규정</a>
-      <a href="#section-targets">타겟 & 동맹</a>
-    </div>
-  </header>
-
-  <!-- 지도 섹션 -->
-  <section id="section-map">
-    <div class="map-container">
-      <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
-    </div>
-  </section>
-
-  <!-- [기술 3] 글래스모피즘 반투명 정보 창 -->
-  <section id="section-rules">
-    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
-    <div class="glass-container">
-      <div class="glass-box">
-        <h3>제1항 : 승리 조건</h3>
-        <p>1주일간의 생존 경쟁 후, 몸에 찍힌 '인장'의 개수가 가장 적은 자가 1위를 차지하여 수도로 승격한다.</p>
+  <!-- 🌟 2. 메인 콘텐츠들을 이 div(#main-wrapper) 안에 가둬서 한 번에 통제한다냥! -->
+  <div id="main-wrapper">
+    
+    <header>
+      <div class="nav-links">
+        <a href="#section-map">전장 지도</a>
+        <a href="#section-rules">아레나 규정</a>
+        <a href="#section-targets">타겟 & 동맹</a>
       </div>
-      <div class="glass-box">
-        <h3>제2항 : 무력화 인장 각인</h3>
-        <p>상대가 저항할 수 없는 무력화 상태(기절, 수면, 절정 등)에서 10초를 유지해야 인장을 새길 수 있다.</p>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- 다음 섹션 준비 공간 -->
-  <section id="section-targets">
-    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">참가자 명부</h2>
-    <div class="glass-container">
-      <div class="glass-box" style="text-align: center;">
-        <p style="color: #888;">데이터 접근 중...</p>
+    <section id="section-map">
+      <div class="map-container">
+        <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 인트로 애니메이션 자바스크립트 -->
+    <section id="section-rules">
+      <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
+      <div class="glass-container">
+        <div class="glass-box">
+          <h3>제1항 : 승리 조건</h3>
+          <p>1주일간의 생존 경쟁 후, 몸에 찍힌 '인장'의 개수가 가장 적은 자가 1위를 차지하여 수도로 승격한다.</p>
+        </div>
+        <div class="glass-box">
+          <h3>제2항 : 무력화 인장 각인</h3>
+          <p>상대가 저항할 수 없는 무력화 상태(기절, 수면, 절정 등)에서 10초를 유지해야 인장을 새길 수 있다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-targets">
+      <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">참가자 명부</h2>
+      <div class="glass-container">
+        <div class="glass-box" style="text-align: center;">
+          <p style="color: #888;">데이터 접근 중...</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
   <script>
     function enterArena() {
       const loginScreen = document.getElementById('login-screen');
+      const mainWrapper = document.getElementById('main-wrapper');
+      
+      // 1. 로그인 창 줌인 되면서 사라지는 효과냥
       loginScreen.classList.add('fade-out-zoom');
+      
+      // 2. 숨겨뒀던 메인 창(#main-wrapper)을 보이게 만들고 스크롤 잠금도 푼다냥!
+      mainWrapper.style.visibility = 'visible';
+      mainWrapper.style.opacity = '1';
+      document.body.style.overflow = 'auto'; // 스크롤바 다시 등장!
+      
+      // 3. 1.2초 뒤에 로그인 창은 완전히 화면에서 치워버린다냥
       setTimeout(() => {
         loginScreen.style.display = 'none';
       }, 1200);
