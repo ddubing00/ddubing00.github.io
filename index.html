@@ -13,13 +13,19 @@
     html {
       scroll-behavior: smooth; 
     }
-    body {
+  body {
       background-color: #0b0b0b; 
       color: #e0e0e0;
       font-family: 'Pretendard', sans-serif;
       margin: 0;
       padding: 0;
       overflow-x: hidden;
+
+      /* 💡 여기에 배경 고정 마법을 추가했다냥! */
+      background-image: url('map.jpg'); /* 사용할 전체 배경 사진 */
+      background-size: cover; /* 화면에 빈틈없이 꽉 차게 */
+      background-position: center; /* 사진이 중앙에 오게 정렬 */
+      background-attachment: fixed; /* 🌟 스크롤을 내려도 배경 이미지를 제자리에 꽉 잡아준다냥! */
     }
 
     /* 2. 줌인 & 페이드아웃 터미널 인트로 화면 */
