@@ -342,6 +342,43 @@
     .target-info strong {
       color: #ff6b6b;
     }
+    /* 📱 모바일 화면 최적화 반응형 세팅이다냥! */
+    @media screen and (max-width: 768px) {
+      /* 규정 및 참가자 명부 그리드를 1열로 변경 */
+      .rules-grid,
+      .target-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      /* 메인 소개 박스 패딩 줄이기 */
+      .main-intro-box {
+        padding: 30px 20px !important;
+        width: 95% !important;
+      }
+      .main-intro-title {
+        font-size: 1.8rem !important;
+      }
+
+      /* 참가자 카드 모바일 정렬 */
+      .target-card {
+        flex-direction: column;
+        text-align: center !important;
+      }
+      .target-img-box {
+        margin: 0 auto;
+      }
+
+      /* 상단 네비게이션 간격 조정 */
+      header {
+        padding: 10px 15px !important;
+      }
+      .nav-links {
+        gap: 15px;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
