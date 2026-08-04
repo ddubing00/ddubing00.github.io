@@ -193,20 +193,16 @@
   <!-- 🌟 2. 메인 콘텐츠들을 이 div(#main-wrapper) 안에 가둬서 한 번에 통제한다냥! -->
   <div id="main-wrapper">
     
-    <header>
+<header>
       <div class="nav-links">
-        <a href="#section-map">전장 지도</a>
+        <!-- 규정 -> 타겟 -> 지도 순서로 재배치했다냥! -->
         <a href="#section-rules">아레나 규정</a>
         <a href="#section-targets">타겟 & 동맹</a>
+        <a href="#section-map">전장 지도</a>
       </div>
     </header>
 
-    <section id="section-map">
-      <div class="map-container">
-        <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
-      </div>
-    </section>
-
+   <!-- 1. 아레나 규정 섹션 (가장 먼저 나오게 위로 올렸다냥!) -->
     <section id="section-rules">
       <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
       <div class="glass-container">
@@ -221,6 +217,7 @@
       </div>
     </section>
 
+    <!-- 2. 타겟 & 동맹 섹션 -->
     <section id="section-targets">
       <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">참가자 명부</h2>
       <div class="glass-container">
@@ -230,6 +227,12 @@
       </div>
     </section>
 
+    <!-- 3. 전장 지도 섹션 (가장 아래로 내렸다냥!) -->
+    <section id="section-map">
+      <div class="map-container">
+        <h1 class="map-title">카리스 아레나 : 낙인의 정원</h1>
+      </div>
+    </section>
   </div>
 
   <script>
