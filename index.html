@@ -42,25 +42,33 @@
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
       margin-bottom: 20px;
     }
-    .area-link {
+   .area-link {
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(30, 30, 30, 0.8);
-      border: 1px solid #ffeb3b;
-      color: #ffeb3b;
-      padding: 10px 15px;
+      /* 투박한 배경과 테두리를 없앴다냥! */
+      background-color: transparent; 
+      border: none;
+      
+      /* 폰트를 판타지스러운 명조체로 바꾸고 크기를 키웠다냥 */
+      font-family: 'Batang', 'Nanum Myeongjo', serif;
+      font-size: 1.3rem;
       font-weight: bold;
+      color: #e0e0e0;
       text-decoration: none;
-      border-radius: 5px;
+      
+      /* 글씨 주변에 안개처럼 은은하게 빛나는 효과를 줬다냥 */
+      text-shadow: 0 0 5px #000, 0 0 15px #88aaff, 0 0 20px #88aaff; 
       transition: all 0.3s ease;
       cursor: pointer;
     }
+    
     .area-link:hover {
-      background-color: #ffeb3b;
-      color: #121212;
-      transform: scale(1.05);
+      /* 마우스를 올리면 황금빛으로 강렬하게 타오르듯 빛난다냥! */
+      color: #ffffff;
+      text-shadow: 0 0 10px #000, 0 0 20px #f0ad4e, 0 0 30px #d9534f;
+      transform: scale(1.15);
     }
     
     /* 각 구역의 위치 좌표 설정 (가로%, 세로% 기준) */
