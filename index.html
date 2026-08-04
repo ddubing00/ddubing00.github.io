@@ -253,6 +253,30 @@
       padding-bottom: 10px;
       margin-top: 0;
     }
+    /* 🌟 규정 파트 2x2 그리드 정렬 디자인 */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .rules-card {
+      text-align: left !important;
+    }
+    .rules-card ul {
+      margin: 0;
+      padding-left: 20px;
+      line-height: 1.8;
+      color: #d0d0d0;
+      font-size: 0.95rem;
+    }
+    .rules-card li {
+      margin-bottom: 8px;
+    }
+    .rules-card strong {
+      color: #ff9999;
+    }
   </style>
 </head>
 <body>
@@ -296,19 +320,58 @@
   </section>
 
   <!-- 아레나 규정 섹션 -->
-  <section id="section-rules">
-    <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.5rem; color: #fff;">생존 규정 및 기밀 문서</h2>
-    <div class="glass-container">
-      <div class="glass-box">
-        <h3>제1항 : 승리 조건</h3>
-        <p>1주일간의 생존 경쟁 후, 몸에 찍힌 '인장'의 개수가 가장 적은 자가 1위를 차지하여 수도로 승격한다.</p>
+<!-- 🌟 깔끔하고 웅장하게 요약된 아레나 규정 섹션이다냥! -->
+    <section id="section-rules">
+      <h2 style="font-family: 'RIDIBatang', serif; font-size: 2.3rem; color: #ff4d4d; margin-bottom: 40px; text-shadow: 0 0 15px rgba(255,0,0,0.5);">생존 규정 및 기밀 문서</h2>
+      
+      <div class="rules-grid">
+        <!-- 1. 기본 규칙 -->
+        <div class="glass-box rules-card">
+          <h3>⚔️ 기본 규칙 & 보상</h3>
+          <ul>
+            <li><strong>목표:</strong> 몸에 찍힌 인장 개수 최소화 (적을수록 상위 순위)</li>
+            <li><strong>1위 보상:</strong> 1년간 수도 권한 독점 및 향락/사치 누림</li>
+            <li><strong>9위 페널티:</strong> 가혹한 노동 및 공물 의무 부과</li>
+            <li><strong>허용 사항:</strong> 무기 사용, 사망, 동맹 체결 전면 허용</li>
+            <li><strong>기간:</strong> 총 1주일 (Day 1 ~ 7, 낮과 밤 존재)</li>
+          </ul>
+        </div>
+
+        <!-- 2. 아레나 구조 -->
+        <div class="glass-box rules-card">
+          <h3>🗺️ 전장 구조 & 보급품</h3>
+          <ul>
+            <li><strong>중앙 (거울 호수):</strong> 온천, 개방 공간, 동맹·난전 중심지</li>
+            <li><strong>동·남 (울창한 숲):</strong> 시야 제한, 매복·기습·은신 최적지</li>
+            <li><strong>서쪽 (작은 폐허):</strong> 무너진 석조 건물, 엄폐와 1:1 제압</li>
+            <li><strong>외곽 (경계의 안개):</strong> 짙은 안개, 도주와 추격전</li>
+            <li><strong>보급품:</strong> 밧줄, 단검, 최음제, 함정 등이 담긴 랜덤 상자</li>
+          </ul>
+        </div>
+
+        <!-- 3. 인장 시스템 -->
+        <div class="glass-box rules-card">
+          <h3>⚜️ 인장 각인 시스템</h3>
+          <ul>
+            <li><strong>각인 조건:</strong> 상대가 완전 무력화된 상태에서 10초간 집중</li>
+            <li><strong>각인 연출:</strong> 황금빛 아우라와 함께 10초에 걸쳐 서서히 새겨짐</li>
+            <li><strong>규칙:</strong> 게임 종료까지 절대 지워지지 않음</li>
+            <li><strong>사망 처리:</strong> 사망 시 곧바로 최하위 순위로 강등</li>
+          </ul>
+        </div>
+
+        <!-- 4. 진행 규칙 -->
+        <div class="glass-box rules-card">
+          <h3>⏳ 진행 및 상호작용</h3>
+          <ul>
+            <li><strong>시간 흐름:</strong> 오전 / 오후 / 저녁 / 밤 4단계 세분화</li>
+            <li><strong>실시간 갱신:</strong> 인장 획득 시 순위표 즉시 업데이트</li>
+            <li><strong>자유도:</strong> 동맹, 배신, 전투, 협상 모든 과정 자유 진행</li>
+            <li><strong>특수 시스템:</strong> 모든 참가자에게 적용되는 쾌락 레벨</li>
+          </ul>
+        </div>
       </div>
-      <div class="glass-box">
-        <h3>제2항 : 무력화 인장 각인</h3>
-        <p>상대가 저항할 수 없는 무력화 상태(기절, 수면, 절정 등)에서 10초를 유지해야 인장을 새길 수 있다.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
   <!-- 타겟 & 동맹 섹션 -->
   <section id="section-targets">
