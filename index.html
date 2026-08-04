@@ -115,12 +115,13 @@
     }
 
     /* 3. 지도 배경과 내부에 들어간 제목 (사진 4번 느낌) */
-    .map-container {
+ .map-container {
       position: relative;
-      width: 100%;
+      width: 95%; /* 화면에 꽉 차게 넓혔다냥 */
       max-width: 1400px;
-      height: 90vh; /* 화면에 꽉 차게 높이 설정냥 */
-      background-image: url(https://github.com/ddubing00/ddubing00.github.io/blob/main/%EB%B9%88%20%EC%A7%80%EB%8F%84.jpg?raw=true); /* <--- 반드시 수정하라냥! */
+      aspect-ratio: 16 / 9; /* 가로가 긴 직사각형 비율로 맞췄다냥! */
+      
+      background-image: url('여기에_새_지도_이미지_주소를_넣어라냥'); 
       background-size: cover;
       background-position: center;
       box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
