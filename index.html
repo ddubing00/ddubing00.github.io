@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>낙인의 정원 - 카리스 아레나</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&display=swap');
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
 
@@ -49,27 +50,22 @@
     
     /* 4. 메인 타이틀 (흰색 글씨에 붉은 안개가 퍼지듯 고급스럽게 바꿨다냥!) */
  
-    .intro-title {
-      /* 1. 혹시 리디바탕이 안 불러와지더라도 날카로운 명조체가 뜨도록 강제 방어막 설정냥! */
-      font-family: 'RIDIBatang', 'Nanum Myeongjo', 'Batang', serif;
-      font-size: 7.5vw; /* 무식하게 크지 않도록 사이즈를 살짝 다듬었다냥 */
-      font-weight: 900;
+  .intro-title {
+      font-family: 'Cinzel', serif; /* 날카로운 영문 폰트 적용냥! */
+      font-size: 8vw; /* 영문은 살짝 더 커도 멋지다냥 */
+      font-weight: 800;
       margin: 0;
-      letter-spacing: 12px;
+      letter-spacing: 20px; /* 영화 포스터처럼 자간을 쫙 벌렸다냥 */
+      text-transform: uppercase; /* 소문자로 적어도 무조건 대문자로 강제 변환냥! */
       
-      /* 2. 촌스러운 노란색을 버리고, 서늘하고 날카로운 백금(Platinum) 질감 적용 */
+      /* 백금 그라데이션과 붉은 그림자는 그대로 유지냥 */
       background: linear-gradient(to bottom, #ffffff 30%, #e0c89b 60%, #8a6a32 100%);
       -webkit-background-clip: text;
       color: transparent;
-      
-      /* 3. 폰트 테두리에 얇은 선을 그어서 금속 로고처럼 엣지를 살렸다냥 */
       -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
-      
-      /* 4. 케첩 느낌을 없애고, 깊은 흑암 속에 붉은 안개가 깔린 듯한 그림자 세팅 */
       filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.9)) drop-shadow(0px 0px 30px rgba(150, 10, 10, 0.8));
       z-index: 10;
     }
-
     /* 🌟 추가: 실시간 먼지(파티클) 효과 CSS냥! */
     #particles {
       position: absolute;
@@ -220,14 +216,15 @@
 
 <!-- 1. 가장 먼저 보이는 인트로 화면 -->
   <div id="login-screen">
-    <!-- 🌟 실시간 먼지가 흩날릴 투명한 공간을 추가했다냥! -->
     <div id="particles"></div>
     
     <p class="intro-subtitle">살아남아라. 그리고 찍어라.</p>
-    <h1 class="intro-title">아레나 '낙인의정원'</h1>
+    
+    <!-- 🌟 바로 이 줄이 아까 그 타이틀 글씨다냥! 여기서 한글을 영어로 바꾼다냥 -->
+    <h1 class="intro-title">GARDEN OF STIGMA</h1>
+    
     <button class="login-btn" onclick="enterArena()">접속 허가</button>
   </div>
-
   <!-- 🌟 2. 메인 콘텐츠들을 이 div(#main-wrapper) 안에 가둬서 한 번에 통제한다냥! -->
   <div id="main-wrapper">
     
