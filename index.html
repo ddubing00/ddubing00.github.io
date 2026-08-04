@@ -8,6 +8,51 @@
     @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     @import url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff');
+    /* 🌟 [메인] 세계관 소개 섹션 디자인 */
+    #section-main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px 20px 20px;
+      box-sizing: border-box;
+    }
+    .main-intro-box {
+      background: rgba(15, 5, 5, 0.7); /* 서늘한 다크 피빛 반투명 유리 */
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(217, 83, 79, 0.4);
+      border-radius: 12px;
+      padding: 50px 60px;
+      max-width: 850px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(179, 0, 0, 0.2);
+    }
+    .main-intro-title {
+      font-family: 'RIDIBatang', 'Nanum Myeongjo', serif;
+      color: #ff4d4d;
+      font-size: 2.3rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+    .main-intro-divider {
+      width: 60px;
+      height: 2px;
+      background-color: #b30000;
+      margin: 0 auto 25px auto;
+    }
+    .main-intro-text {
+      font-family: 'Pretendard', sans-serif;
+      color: #e0e0e0;
+      font-size: 1.05rem;
+      line-height: 2.2;
+      letter-spacing: 1px;
+      margin: 0;
+    }
 /* 🌟 메인 세계관 소개 박스 스타일링 */
     .main-intro-box {
       background: rgba(15, 5, 5, 0.65); /* 딥한 다크 피빛 반투명 유리 */
@@ -279,6 +324,24 @@
         <a href="#section-map">전장 지도</a>
       </div>
     </header>
+    <!-- 🌟 맨 처음으로 뜨는 [메인] 세계관 소개 섹션이다냥! -->
+    <section id="section-main">
+      <div class="main-intro-box">
+        <h2 class="main-intro-title">아레나 ‘낙인의 정원’</h2>
+        <div class="main-intro-divider"></div>
+        <p class="main-intro-text">
+          9개 구역이 매년 서열을 가르는 도시.<br>
+          아레나 ‘낙인의 정원’에서 1주일간 펼쳐지는 생존 게임.<br>
+          상대를 절정으로 무너뜨리고, 10초 동안 인장을 남겨라.<br><br>
+          1위는 수도가 되어 모든 것을 소유하고,<br>
+          9위는 노역에 시달린다.<br>
+          무기와 죽음도 허용된 이 게임에서,<br>
+          당신은 9구역 대표로 참가한다.<br><br>
+          <span style="color: #ff9999; font-weight: bold;">동맹, 배신, 지배, 그리고 쾌락.</span><br>
+          <span style="color: #ff4d4d; font-size: 1.2rem; letter-spacing: 2px;">살아남아라. 그리고 찍어라.</span>
+        </p>
+      </div>
+    </section>
 /* 🌟 메인 세계관 소개 박스 스타일링 */
     .main-intro-box {
       background: rgba(15, 5, 5, 0.65); /* 딥한 다크 피빛 반투명 유리 */
